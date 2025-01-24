@@ -53,7 +53,7 @@ main(int argc, char* argv[])
     serverApps.Start(Seconds(1.0));
     serverApps.Stop(Seconds(10.0));
 
-    UdpEchoClientHelper echoClient(interfaces.GetAddress(1), 63);
+    UdpEchoClientHelper echoClient(interfaces.GetAddress(1), 63); // changed port
     echoClient.SetAttribute("MaxPackets", UintegerValue(1));
     echoClient.SetAttribute("Interval", TimeValue(Seconds(1.0)));
     echoClient.SetAttribute("PacketSize", UintegerValue(256)); // changed packet size
