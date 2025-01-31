@@ -63,7 +63,7 @@ main(int argc, char* argv[])
     clientApps.Stop(Seconds(10.0));
     
     // Enable PCAP tracing
-    pointToPoint.EnablePcapAll("first");
+    pointToPoint.EnablePcapAll("first", true);
     Simulator::Run();
     Simulator::Destroy();
     return 0;
