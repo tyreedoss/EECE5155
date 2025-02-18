@@ -134,6 +134,7 @@ main(int argc, char* argv[])
 
     if (tracing)
     {
+        phy.SetPcapDataLinkType(YansWifiPhyHelper::DLT_IEEE802_11_RADIO);
         phy.EnablePcap("adhoc-wifi-node1",devices.Get(1),true);
     }
     Simulator::Run();
