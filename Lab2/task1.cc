@@ -74,6 +74,9 @@ main(int argc, char* argv[])
     // setup wifi devices
     NetDeviceContainer devices = wifi.Install(phy, mac, wifiNodes);
 
+    // Configure RTS/CTS threshold
+    Config::SetDefault("ns3::WifiRemoteStationManager::RtsCtsThreshold", UintegerValue(100));
+
     // changed mobility model to specified bounds
     MobilityHelper mobility;
     mobility.SetPositionAllocator("ns3::GridPositionAllocator",
